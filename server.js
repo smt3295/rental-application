@@ -3,7 +3,7 @@ const path = require('path');
 const express = require('express');
 const helmet = require('helmet');
 const morgan = require('morgan');
-const { Resend } = require('@resend/node');
+const { Resend } = require("resend");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
