@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Inquiries | Hueytown Commercial Suites</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body class="admin-page">
+  <main class="admin-wrap">
+    <div class="admin-head">
+      <div>
+        <p class="eyebrow dark">Admin</p>
+        <h1>Inquiry Dashboard</h1>
+      </div>
+      <a class="button secondary" href="/">View Site</a>
+    </div>
+    <form id="pinForm" class="pin-form">
+      <label>Admin PIN <input id="pin" type="password" required /></label>
+      <button class="button" type="submit">Load Inquiries</button>
+    </form>
+    <div id="results" class="inquiry-list"></div>
+  </main>
+  <script>
+    const form = document.getElementById('pinForm');
+    const results = document.getElementById('results');
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      results.innerHTML = '<p>Loading...</p>';
+      const pin = document.getElementById('pin').value;
+      const response = await fetch('/api/inquiries?pin=' + encodeURIComponent(pin));
+      if (!response.ok) {
+        results.innerHTML = '<p class="error">Invalid PIN or unable to load inquiries.</p>';
+        return;
+      }
+      const inquiries = await response.json();
+      if (!inquiries.length) {
+        results.innerHTML = '<p>No inquiries yet.</p>';
+        return;
+      }
+      results.innerHTML = inquiries.map((item) => `
+        <article class="inquiry-item">
+          <h2>${item.fullName || 'No Name'} <span>${item.spaceInterest || ''}</span></h2>
+          <p><strong>Submitted:</strong> ${item.submittedAt || ''}</p>
+          <p><strong>Business:</strong> ${item.businessName || 'N/A'}</p>
+          <p><strong>Phone:</strong> ${item.phone || ''} &nbsp; <strong>Email:</strong> ${item.email || ''}</p>
+          <p><strong>Type:</strong> ${item.businessType || ''}</p>
+          <p><strong>Description:</strong> ${item.businessDescription || ''}</p>
+          <p><strong>Move-In:</strong> ${item.moveIn || 'N/A'} &nbsp; <strong>Lease:</strong> ${item.leaseTerm || 'N/A'}</p>
+          <p><strong>Comments:</strong> ${item.comments || 'N/A'}</p>
+        </article>
+      `).join('');
+    });
+  </script>
+</body>
+</html>

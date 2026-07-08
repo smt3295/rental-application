@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hueytown Commercial Suites</title>
+  <meta name="description" content="Commercial retail and office suites available at 1355 Hueytown Road, Hueytown, AL 35023." />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="Hueytown Commercial Suites home">
+      <span>Hueytown</span>
+      <strong>Commercial Suites</strong>
+    </a>
+    <nav>
+      <a href="#suites">Suites</a>
+      <a href="#photos">Photos</a>
+      <a href="#location">Location</a>
+      <a class="button small" href="#inquiry">Request Information</a>
+    </nav>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <img src="/images/hero-storefront.jpg" alt="Storefront at Hueytown Commercial Suites" />
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <p class="eyebrow">Retail & Office Space Available</p>
+        <h1>Hueytown Commercial Suites</h1>
+        <p class="address">1355 Hueytown Road • Hueytown, AL 35023</p>
+        <a class="button" href="#inquiry">Request Information</a>
+      </div>
+    </section>
+
+    <section class="quickfacts" aria-label="Property quick facts">
+      <div><span>Location</span><strong>1355 Hueytown Road</strong></div>
+      <div><span>Available Space</span><strong>900–2,450 Sq Ft</strong></div>
+      <div><span>Starting Rent</span><strong>$950 / Month</strong></div>
+      <div><span>Inquiry</span><strong>Form Only</strong></div>
+    </section>
+
+    <section class="section intro">
+      <div>
+        <p class="eyebrow dark">Commercial Leasing Opportunity</p>
+        <h2>Flexible space for a growing business.</h2>
+      </div>
+      <p>Two commercial suites are currently available and may be leased separately or together. Water is included. Submit the inquiry form below and we’ll review your business needs and follow up with more information.</p>
+    </section>
+
+    <section id="suites" class="section">
+      <div class="section-heading">
+        <p class="eyebrow dark">Available Suites</p>
+        <h2>Choose the space that fits your business.</h2>
+      </div>
+      <div class="cards">
+        <article class="suite-card">
+          <img src="/images/suite-101.jpg" alt="Suite 101 interior" />
+          <div class="suite-body">
+            <h3>Suite 101</h3>
+            <p class="price">$950/month</p>
+            <ul>
+              <li>900 sq. ft.</li>
+              <li>Water included</li>
+              <li>Available individually</li>
+            </ul>
+            <a href="#inquiry" class="button secondary">Inquire About Suite 101</a>
+          </div>
+        </article>
+        <article class="suite-card">
+          <img src="/images/storefront.jpg" alt="Hueytown Commercial Suites storefront" />
+          <div class="suite-body">
+            <h3>Suite 105</h3>
+            <p class="price">$1,350/month</p>
+            <ul>
+              <li>1,550 sq. ft.</li>
+              <li>Water included</li>
+              <li>Available individually</li>
+            </ul>
+            <a href="#inquiry" class="button secondary">Inquire About Suite 105</a>
+          </div>
+        </article>
+        <article class="suite-card highlight">
+          <div class="suite-body centered">
+            <h3>Lease Both Suites</h3>
+            <p class="price">2,450 sq. ft. total</p>
+            <p>Need more room? Suite 101 and Suite 105 may be leased together for one larger business footprint.</p>
+            <a href="#inquiry" class="button">Inquire About Both</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="photos" class="section split">
+      <div>
+        <p class="eyebrow dark">Photos</p>
+        <h2>Clean storefront visibility with open interior space.</h2>
+        <p>The selected photos show the best current views of the property: the exterior storefront and the Suite 101 open interior. More suite photos can be added later as they become available.</p>
+      </div>
+      <div class="photo-grid">
+        <img class="wide" src="/images/storefront.jpg" alt="Exterior storefront" />
+        <img src="/images/suite-101.jpg" alt="Suite 101 open interior" />
+      </div>
+    </section>
+
+    <section id="location" class="section location-section">
+      <div class="section-heading">
+        <p class="eyebrow dark">Location</p>
+        <h2>1355 Hueytown Road, Hueytown, AL 35023</h2>
+      </div>
+      <div class="map-wrap">
+        <iframe title="Map to Hueytown Commercial Suites" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=1355%20Hueytown%20Road%2C%20Hueytown%2C%20AL%2035023&output=embed"></iframe>
+      </div>
+    </section>
+
+    <section id="inquiry" class="section form-section">
+      <div class="form-intro">
+        <p class="eyebrow dark">Request Information</p>
+        <h2>Commercial Space Inquiry</h2>
+        <p>Complete the short form below. This is only an inquiry and does not guarantee availability or approval.</p>
+      </div>
+
+      <form class="inquiry-form" action="/submit-inquiry" method="POST">
+        <div class="two-col">
+          <label>Full Name *<input required name="fullName" autocomplete="name" /></label>
+          <label>Phone Number *<input required name="phone" autocomplete="tel" /></label>
+        </div>
+        <div class="two-col">
+          <label>Email Address *<input required type="email" name="email" autocomplete="email" /></label>
+          <label>Business Name <input name="businessName" /></label>
+        </div>
+
+        <label>Space of Interest *
+          <select required name="spaceInterest">
+            <option value="">Select one</option>
+            <option>Suite 101 - 900 sq. ft. - $950/month</option>
+            <option>Suite 105 - 1,550 sq. ft. - $1,350/month</option>
+            <option>Both Suites - 2,450 sq. ft.</option>
+            <option>Not Sure Yet</option>
+          </select>
+        </label>
+
+        <label>Type of Business *
+          <input required name="businessType" placeholder="Example: retail, office, salon, professional service" />
+        </label>
+
+        <label>Business Description *
+          <textarea required name="businessDescription" rows="4" placeholder="Briefly describe your business, products or services, expected customer traffic, and how you plan to use the space."></textarea>
+        </label>
+
+        <div class="two-col">
+          <label>Do you currently operate a business?
+            <select name="currentBusiness">
+              <option value="">Select one</option>
+              <option>Yes</option>
+              <option>No - Startup / New Business</option>
+            </select>
+          </label>
+          <label>If yes, how long have you been in business?
+            <select name="yearsInBusiness">
+              <option value="">Select one</option>
+              <option>Less than 1 year</option>
+              <option>1-3 years</option>
+              <option>3-5 years</option>
+              <option>5-10 years</option>
+              <option>More than 10 years</option>
+            </select>
+          </label>
+        </div>
+
+        <label>Current Business Location
+          <select name="currentLocation">
+            <option value="">Select one</option>
+            <option>Commercial Lease</option>
+            <option>Commercial Owner</option>
+            <option>Home-Based</option>
+            <option>Online Only</option>
+            <option>No Current Location</option>
+          </select>
+        </label>
+
+        <div class="two-col">
+          <label>Desired Move-In
+            <select name="moveIn">
+              <option value="">Select one</option>
+              <option>Immediately</option>
+              <option>Within 30 Days</option>
+              <option>1-3 Months</option>
+              <option>Just Exploring Options</option>
+            </select>
+          </label>
+          <label>Preferred Lease Term
+            <select name="leaseTerm">
+              <option value="">Select one</option>
+              <option>1 Year</option>
+              <option>2 Years</option>
+              <option>3 Years</option>
+              <option>5 Years</option>
+              <option>Open to Discussing</option>
+            </select>
+          </label>
+        </div>
+
+        <label>Questions or Comments
+          <textarea name="comments" rows="4"></textarea>
+        </label>
+
+        <label class="checkbox"><input required type="checkbox" /> <span>I understand this inquiry is for informational purposes only and does not guarantee availability or approval.</span></label>
+        <button class="button submit" type="submit">Submit Inquiry</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <strong>Hueytown Commercial Suites</strong>
+    <span>1355 Hueytown Road • Hueytown, AL 35023</span>
+  </footer>
+</body>
+</html>
